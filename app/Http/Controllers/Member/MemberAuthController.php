@@ -11,19 +11,15 @@ use App\Models\User;
 
 class MemberAuthController extends Controller
 {
-  // function untuk menampilkan halaman login
   public function index()
   {
     // Periksa apakah pengguna sudah login
     if (Auth::check()) {
-
-      // Jika pengguna adalah buyer, arahkan ke halaman utama
       return redirect()->route('home');
     }
-    // Jika belum login, tampilkan halaman login admin
+    // Jika belum login, tampilkan halaman login member
     return view('member.auth.login');
   }
-
 
   public function login(Request $request)
   {
@@ -81,14 +77,9 @@ class MemberAuthController extends Controller
   {
     // Periksa apakah pengguna sudah login
     if (Auth::check()) {
-      // Jika pengguna adalah seller, arahkan ke halaman admin
-      if (Auth::user()->role != 'seller') {
-        return redirect()->route('admin.dashboard');
-      }
-
-      // Jika pengguna adalah buyer, arahkan ke halaman utama
       return redirect()->route('home');
     }
+
     // Jika belum login, tampilkan halaman login admin
     return view('member.auth.register');
   }

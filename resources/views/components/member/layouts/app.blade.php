@@ -91,11 +91,12 @@
             modal.classList.add('hidden'); // Keep it hidden
         }
 
+        const price = document.getElementById('price-modal').value
+
         // Function to dynamically update the total price based on the quantity
         document.querySelectorAll('input[type="number"]').forEach(input => {
             input.addEventListener('input', function() {
                 const productId = this.id.split('-')[1];
-                const price = document.getElementById('price-modal').value
                 const quantity = this.value;
                 const total = price * quantity;
                 document.getElementById('price-modal').value = total;

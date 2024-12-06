@@ -1,5 +1,5 @@
-    <!-- Navbar start -->
-    <div class="w-full mx-auto fixed top-0 left-0 bg-gray-800">
+   <!-- Navbar start -->
+   <div class="w-full mx-auto fixed top-0 left-0 bg-gray-800">
         <nav class="px-2 pt-3 pb-3">
             <div class="container mx-auto flex flex-wrap items-center justify-between">
                 <a href="{{ route('home') }}" class="text-2xl font-bold text-white">RTS<span
@@ -50,10 +50,6 @@
                         <!-- Profile Dropdown Menu -->
                         <div id="dropdown-menu"
                             class="hidden absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg">
-                            <a href="#cart" class="block px-4 py-2 hover:bg-gray-100 flex items-center space-x-2">
-                                <i data-feather="shopping-cart" class="w-5 h-5"></i>
-                                <span>Keranjang</span>
-                            </a>
                             <a href="{{ route('member.logout') }}"
                                 class="block px-4 py-2 hover:bg-gray-100 flex items-center space-x-2">
                                 <i data-feather="log-out" class="w-5 h-5"></i>
@@ -111,4 +107,5 @@
             </div>
         </nav>
     </div>
-    <!-- Navbar end -->
+    <!-- Navbar end -->
+ 

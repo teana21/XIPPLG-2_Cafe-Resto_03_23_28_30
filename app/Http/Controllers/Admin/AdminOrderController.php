@@ -20,6 +20,6 @@ class AdminOrderController extends Controller
 
     // simpan ke database
     $orders->update(['status' => 'success']);
-    return redirect()->back()->with('success', 'Perubahan Berhasil Di Simpan');
+    return redirect()->back()->with('success', 'Pesanan Berhasil Di Selesaikan');
   }
 }

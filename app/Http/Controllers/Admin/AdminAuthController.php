@@ -15,15 +15,8 @@ class AdminAuthController extends Controller
   // function untuk menampilkan halaman login
   public function index()
   {
-    // Periksa apakah pengguna sudah login
-    if (Auth::check()) {
-      // Jika pengguna adalah seller, arahkan ke halaman admin
-      if (Auth::user()->role == 'seller') {
-        return redirect()->route('admin.dashboard');
-      }
-
-      // Jika pengguna adalah buyer, arahkan ke halaman utama
-      return redirect()->route('home');
+    if (Auth::user()) {
+      return redirect()->route('admin.dashboard');
     }
     // Jika belum login, tampilkan halaman login admin
     return view('admin.auth.login');
